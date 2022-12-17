@@ -2,12 +2,14 @@
 
 
 Potrebno je napraviti dizajn sistema, arhitekturu sistema, implementirati i istestirati rešenje koje simulira rad proxy servera. Sistem treba da sadrži klijentske aplikacije koje vrše slanje podataka serveru, centralnog servera i proxy-ja koji vrši dobavljanje podataka sa servera.
+
 Device
 •	Poseduje jedinstveni ID
 •	Vrši upis podataka o merenjima 
 •	Merenje sadrži informaciju o tome da li je vrednost analogna ili digitalna, vrednost merenja, svoj ID i Timestamp
 •	Slanje merenja obavlja se na svakih 5 minuta 
 •	Može biti podignuto više instanci komponente Device
+
 Server
 •	Sluša zahteve za upis podataka u bazu podataka
 •	Sluša zahteve za dobavljanje podataka od proxy servera
