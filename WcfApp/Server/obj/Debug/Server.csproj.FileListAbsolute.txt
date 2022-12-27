@@ -1,0 +1,14 @@
+C:\Users\marko\OneDrive\Desktop\res_proj\WcfApp\Server\bin\Debug\Server.exe.config
+C:\Users\marko\OneDrive\Desktop\res_proj\WcfApp\Server\bin\Debug\Server.exe
+C:\Users\marko\OneDrive\Desktop\res_proj\WcfApp\Server\bin\Debug\Server.pdb
+C:\Users\marko\OneDrive\Desktop\res_proj\WcfApp\Server\bin\Debug\Models.dll
+C:\Users\marko\OneDrive\Desktop\res_proj\WcfApp\Server\bin\Debug\Models.pdb
+C:\Users\marko\OneDrive\Desktop\res_proj\WcfApp\Server\obj\Debug\Server.csproj.AssemblyReference.cache
+C:\Users\marko\OneDrive\Desktop\res_proj\WcfApp\Server\obj\Debug\Server.csproj.CoreCompileInputs.cache
+C:\Users\marko\OneDrive\Desktop\res_proj\WcfApp\Server\obj\Debug\Server.csproj.CopyComplete
+C:\Users\marko\OneDrive\Desktop\res_proj\WcfApp\Server\obj\Debug\Server.exe
+C:\Users\marko\OneDrive\Desktop\res_proj\WcfApp\Server\obj\Debug\Server.pdb
+C:\Users\marko\OneDrive\Desktop\res_proj\WcfApp\Server\bin\Debug\EntityFramework.dll
+C:\Users\marko\OneDrive\Desktop\res_proj\WcfApp\Server\bin\Debug\EntityFramework.SqlServer.dll
+C:\Users\marko\OneDrive\Desktop\res_proj\WcfApp\Server\bin\Debug\EntityFramework.xml
+C:\Users\marko\OneDrive\Desktop\res_proj\WcfApp\Server\bin\Debug\EntityFramework.SqlServer.xml

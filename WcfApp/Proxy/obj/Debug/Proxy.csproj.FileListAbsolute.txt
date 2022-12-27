@@ -1,0 +1,10 @@
+C:\Users\marko\OneDrive\Desktop\res_proj\WcfApp\Proxy\bin\Debug\Proxy.exe.config
+C:\Users\marko\OneDrive\Desktop\res_proj\WcfApp\Proxy\bin\Debug\Proxy.exe
+C:\Users\marko\OneDrive\Desktop\res_proj\WcfApp\Proxy\bin\Debug\Proxy.pdb
+C:\Users\marko\OneDrive\Desktop\res_proj\WcfApp\Proxy\bin\Debug\Models.dll
+C:\Users\marko\OneDrive\Desktop\res_proj\WcfApp\Proxy\bin\Debug\Models.pdb
+C:\Users\marko\OneDrive\Desktop\res_proj\WcfApp\Proxy\obj\Debug\Proxy.csproj.AssemblyReference.cache
+C:\Users\marko\OneDrive\Desktop\res_proj\WcfApp\Proxy\obj\Debug\Proxy.csproj.CoreCompileInputs.cache
+C:\Users\marko\OneDrive\Desktop\res_proj\WcfApp\Proxy\obj\Debug\Proxy.csproj.CopyComplete
+C:\Users\marko\OneDrive\Desktop\res_proj\WcfApp\Proxy\obj\Debug\Proxy.exe
+C:\Users\marko\OneDrive\Desktop\res_proj\WcfApp\Proxy\obj\Debug\Proxy.pdb

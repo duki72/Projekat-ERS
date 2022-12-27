@@ -1,0 +1,6 @@
+C:\Users\marko\OneDrive\Desktop\res_proj\WcfApp\Models\bin\Debug\Models.dll
+C:\Users\marko\OneDrive\Desktop\res_proj\WcfApp\Models\bin\Debug\Models.pdb
+C:\Users\marko\OneDrive\Desktop\res_proj\WcfApp\Models\obj\Debug\Models.csproj.AssemblyReference.cache
+C:\Users\marko\OneDrive\Desktop\res_proj\WcfApp\Models\obj\Debug\Models.csproj.CoreCompileInputs.cache
+C:\Users\marko\OneDrive\Desktop\res_proj\WcfApp\Models\obj\Debug\Models.dll
+C:\Users\marko\OneDrive\Desktop\res_proj\WcfApp\Models\obj\Debug\Models.pdb
