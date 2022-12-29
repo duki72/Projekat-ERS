@@ -14,9 +14,12 @@ namespace Server
     
     public partial class Merenje
     {
-        public long id { get; set; }
         public Nullable<int> tip { get; set; }
         public Nullable<double> vrednost { get; set; }
         public long timestamp { get; set; }
+        public long idDb { get; set; }
+        public Nullable<long> idMerenja { get; set; }
+        public Nullable<long> idDevice { get; set; }
+        
     }
 }
