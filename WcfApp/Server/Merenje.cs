@@ -19,7 +19,6 @@ namespace Server
         public long timestamp { get; set; }
         public long idDb { get; set; }
         public Nullable<long> idMerenja { get; set; }
-        public Nullable<long> idDevice { get; set; }
-        
+        public Nullable<long> idDevice { get; set; }       
     }
 }
