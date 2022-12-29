@@ -19,10 +19,8 @@ namespace Models
         [OperationContract]
         List<double?> GetAzuriraneVrednostiUredjaja();
 
-
         [OperationContract]
         List<Merenje> GetAnalogni();
-
         
         [OperationContract]
         List<Merenje> GetDigitalni();
@@ -60,10 +58,8 @@ namespace Models
         [OperationContract]
         Models.Merenje GetMerenjeByDbId(int dbId);
 
-
         [OperationContract]
         Merenje GetLastForDeviceId(int id);
-
     }
 
     [ServiceContract]
