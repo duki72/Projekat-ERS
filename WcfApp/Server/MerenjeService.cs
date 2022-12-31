@@ -5,30 +5,27 @@ using System.Linq;
 using System.ServiceModel;
 using System.Text;
 using System.Threading.Tasks;
+using static Server.Conversion;
 
 namespace Server
 {
-
     [ServiceBehavior(InstanceContextMode = InstanceContextMode.Single)]
-    public class MerenjeService : IMerenjeService
+    public class MerenjeService : Models.IServerMerenjeService, Models.IWrite
     {
-        [OperationBehavior]
-        public ICollection<Models.Merenje> GetMerenjes()
+        private Conversion conversion = new Conversion();
+        private DBCRUD.IDBCRUD crud { get; set; } = null;
+        public MerenjeService(DBCRUD.IDBCRUD crud) : base()
         {
-            using (var db = new MerenjeResEntities())
-            {
-                return db.Merenjes.ToList().Select(x =>
-                {
-                    return new Models.Merenje()
-                    {
-                        Id = (int)x.id,
-                        Timestamp = x.timestamp,
-                        Tip = (MerenjeTip)x.tip,
-                        Vrednost = (double)x.vrednost
-                    };
-                }).ToList();
-            }
+            this.crud = crud;
+        }
+    
+        [OperationBehavior]
+        public IDictionary<int, long> GetAllTimestampsById(int id)
+        {
+            IDictionary<int, long> dict = crud.GetAllTimestampsById(id);
+            ProxyLogger.log.Info($"Server citanje za {id},svi timestampovi:{dict}");
 
+            return crud.GetAllTimestampsById(id);
         }
     }
 }
