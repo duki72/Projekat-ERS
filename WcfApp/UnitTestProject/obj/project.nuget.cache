@@ -1,0 +1,39 @@
+{
+  "version": 2,
+  "dgSpecHash": "wvbKAzuocLVnJNE4mKHiMmT2/19xLdN1ocoMX6GLDq5pxZAU7wMRKFkT1kv3lrkNhuZJrYyS6U4WFSqtffNnug==",
+  "success": false,
+  "projectFilePath": "C:\\Users\\Nina Gaming\\Documents\\GitHub\\Projekat-ERS\\WcfApp\\UnitTestProject\\UnitTestProject.csproj",
+  "expectedPackageFiles": [],
+  "logs": [
+    {
+      "code": "NU1301",
+      "level": "Error",
+      "message": "Unable to load the service index for source https://api.nuget.org/v3/index.json.",
+      "libraryId": "Microsoft.NET.Test.Sdk"
+    },
+    {
+      "code": "NU1301",
+      "level": "Error",
+      "message": "Unable to load the service index for source https://api.nuget.org/v3/index.json.",
+      "libraryId": "NUnit"
+    },
+    {
+      "code": "NU1301",
+      "level": "Error",
+      "message": "Unable to load the service index for source https://api.nuget.org/v3/index.json.",
+      "libraryId": "NUnit3TestAdapter"
+    },
+    {
+      "code": "NU1301",
+      "level": "Error",
+      "message": "Unable to load the service index for source https://api.nuget.org/v3/index.json.",
+      "libraryId": "NUnit.Analyzers"
+    },
+    {
+      "code": "NU1301",
+      "level": "Error",
+      "message": "Unable to load the service index for source https://api.nuget.org/v3/index.json.",
+      "libraryId": "coverlet.collector"
+    }
+  ]
+}

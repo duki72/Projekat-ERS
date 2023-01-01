@@ -43,6 +43,8 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Konekcija\IKonekcija.cs" />
+    <Compile Include="Konekcija\Konekcija.cs" />
     <Compile Include="Merenje.cs" />
     <Compile Include="IMerenjeService.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
