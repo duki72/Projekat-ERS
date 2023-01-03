@@ -44,7 +44,9 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Konekcija\IKonekcija.cs" />
+    <Compile Include="Konekcija\KlijentKonekcija.cs" />
     <Compile Include="Konekcija\Konekcija.cs" />
+    <Compile Include="Konekcija\ServerKonekcija.cs" />
     <Compile Include="Merenje.cs" />
     <Compile Include="IMerenjeService.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
