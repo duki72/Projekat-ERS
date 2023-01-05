@@ -1,22 +1,36 @@
-﻿using System;
+﻿using Models;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.ServiceModel;
 using System.Text;
 using System.Threading.Tasks;
-using static Server.Conversion;
 
-namespace Server
+namespace Proxy
 {
-    [ServiceBehavior(InstanceContextMode = InstanceContextMode.Single)]
-    public class MerenjeService : Models.IServerMerenjeService, Models.IWrite
+    [ServiceContract]
+    public interface IProxyService : Models.IMerenjeService
     {
-        private Conversion conversion = new Conversion();
-        private DBCRUD.IDBCRUD crud { get; set; } = null;
-        public MerenjeService(DBCRUD.IDBCRUD crud) : base()
+        [OperationContract]
+        void CheckRemovals();
+    }
+
+    [ServiceBehavior(InstanceContextMode = InstanceContextMode.Single)]
+    public class ProxyService : IProxyService
+    {
+        Models.IServerMerenjeService ServerService = null;
+        private List<ProxyMerenje> LocalStorage = new List<ProxyMerenje>();
+
+        public ProxyService(Models.IServerMerenjeService serverService)
         {
-            this.crud = crud;
+            ServerService = serverService;
         }
 
-    }
-}
+        public List<ProxyMerenje> GetLocalStorage()
+        {
+            lock (LocalStorage)
+            {
+                return LocalStorage;
+            }
+        }
+
