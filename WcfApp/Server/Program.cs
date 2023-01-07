@@ -25,10 +25,5 @@ namespace Server
             host.Open();
             Console.ReadLine();
         }
-
-        private static void HostOpened(object sender, EventArgs e)
-        {
-            Console.WriteLine("Server je spreman");
-        }
     }
 }
