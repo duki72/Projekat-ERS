@@ -10,25 +10,23 @@ namespace Server
 {
     class Program
     {
+       [ExcludeFromCodeCoverage]
         static void Main(string[] args)
         {
-            const short serverPort = 1234;
-            var uris = new Uri[]
-            {
-                new Uri($"net.tcp://localhost:{serverPort}/MerenjeService")
-            };
-            IMerenjeService service = new MerenjeService();
-            ServiceHost host = new ServiceHost(service, uris);
-            var binding = new NetTcpBinding(SecurityMode.None);
-            host.AddServiceEndpoint(typeof(IMerenjeService), binding, "");
-            host.Opened += HostOpened;
-            host.Open();
-            Console.ReadLine();
-        }
+            Models.Konekcije.ServerKonekcija<IServerMerenjeService> konekcija = 
+                new Models.Konekcije.ServerKonekcija<IServerMerenjeService>(
+                    new string[] { Models.Konekcije.Konekcija.UriServer },
+                    new MerenjeService(new DBCRUD.DBCRUD())
+                );
+            konekcija.Open();
 
-        private static void HostOpened(object sender, EventArgs e)
-        {
-            Console.WriteLine("Server je spreman");
+            Models.Konekcije.ServerKonekcija<IWrite> konekcijaWrite =
+                new Models.Konekcije.ServerKonekcija<IWrite>(
+                    new string[] { Models.Konekcije.Konekcija.UriServerWrite },
+                    new MerenjeService(new DBCRUD.DBCRUD())
+                );
+            konekcijaWrite.Open();
+            Console.ReadLine();
         }
     }
 }
