@@ -270,10 +270,54 @@ namespace Proxy
                 }
             }
 
-            return merenja;
+            [OperationBehavior]
+            public List<Merenje> GetDigitalni()
+            {
+                List<Merenje> merenja = new List<Merenje>();
+
+                var tsForDigital = ServerService.GetTimestampsDigital();
+
+                foreach (var kv in tsForDigital)
+                {
+                    ProxyMerenje localCopy = null;
+                    lock (LocalStorage)
+                    {
+                        if (LocalStorage.Where(x => x.MerenjeInfo.IdDb == kv.Key).Count() > 0)
+                        {
+                            localCopy = LocalStorage.Where(x => x.MerenjeInfo.IdDb == kv.Key).FirstOrDefault();
+                        }
+                    }
+
+                    if (localCopy == null)
+                    {
+                        ProxyLogger.log.Info($"Proxy's doesn't have local copy, retreivin new one from server.");
+
+                        var newMerenje = GetMerenjeByDbId((int)kv.Key);
+                        UpdateLocalStorageWithNewMerenje(newMerenje);
+                        merenja.Add(newMerenje);
+                    }
+                    else if (localCopy.MerenjeInfo.Timestamp < kv.Value)
+                    {
+                        ProxyLogger.log.Info($"Proxy's merenje:{localCopy} is NOT up to date, retreiving new one from server.");
+
+                        var newMerenje = GetMerenjeByDbId((int)kv.Key);
+                        UpdateLocalStorageWithNewMerenje(newMerenje);
+                        merenja.Add(newMerenje);
+                    }
+                    else
+                    {
+                        ProxyLogger.log.Info($"Proxy's merenje:{localCopy} is up to date.");
+
+                        merenja.Add(localCopy.MerenjeInfo);
+                    }
+                }
+
+                return merenja;
+            }
         }
 
     }
 }
+
         
 
