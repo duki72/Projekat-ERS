@@ -1,0 +1,11 @@
+C:\Users\Nina Gaming\Downloads\res_merenje\res_merenje\Device\bin\Debug\Device.exe.config
+C:\Users\Nina Gaming\Downloads\res_merenje\res_merenje\Device\bin\Debug\Device.exe
+C:\Users\Nina Gaming\Downloads\res_merenje\res_merenje\Device\bin\Debug\Device.pdb
+C:\Users\Nina Gaming\Downloads\res_merenje\res_merenje\Device\bin\Debug\Models.dll
+C:\Users\Nina Gaming\Downloads\res_merenje\res_merenje\Device\bin\Debug\Models.pdb
+C:\Users\Nina Gaming\Downloads\res_merenje\res_merenje\Device\obj\Debug\Device.csproj.AssemblyReference.cache
+C:\Users\Nina Gaming\Downloads\res_merenje\res_merenje\Device\obj\Debug\Device.csproj.SuggestedBindingRedirects.cache
+C:\Users\Nina Gaming\Downloads\res_merenje\res_merenje\Device\obj\Debug\Device.csproj.CoreCompileInputs.cache
+C:\Users\Nina Gaming\Downloads\res_merenje\res_merenje\Device\obj\Debug\Device.csproj.CopyComplete
+C:\Users\Nina Gaming\Downloads\res_merenje\res_merenje\Device\obj\Debug\Device.exe
+C:\Users\Nina Gaming\Downloads\res_merenje\res_merenje\Device\obj\Debug\Device.pdb
