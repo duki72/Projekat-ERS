@@ -1,0 +1,12 @@
+C:\Users\marko\OneDrive\Documents\GitHub\res_merenje\Proxy\bin\Debug\Proxy.exe.config
+C:\Users\marko\OneDrive\Documents\GitHub\res_merenje\Proxy\bin\Debug\Proxy.exe
+C:\Users\marko\OneDrive\Documents\GitHub\res_merenje\Proxy\bin\Debug\Proxy.pdb
+C:\Users\marko\OneDrive\Documents\GitHub\res_merenje\Proxy\bin\Debug\Models.dll
+C:\Users\marko\OneDrive\Documents\GitHub\res_merenje\Proxy\bin\Debug\Models.pdb
+C:\Users\marko\OneDrive\Documents\GitHub\res_merenje\Proxy\obj\Debug\Proxy.csproj.AssemblyReference.cache
+C:\Users\marko\OneDrive\Documents\GitHub\res_merenje\Proxy\obj\Debug\Proxy.csproj.CoreCompileInputs.cache
+C:\Users\marko\OneDrive\Documents\GitHub\res_merenje\Proxy\obj\Debug\Proxy.csproj.CopyComplete
+C:\Users\marko\OneDrive\Documents\GitHub\res_merenje\Proxy\obj\Debug\Proxy.exe
+C:\Users\marko\OneDrive\Documents\GitHub\res_merenje\Proxy\obj\Debug\Proxy.pdb
+C:\Users\marko\OneDrive\Documents\GitHub\res_merenje\Proxy\bin\Debug\log4net.dll
+C:\Users\marko\OneDrive\Documents\GitHub\res_merenje\Proxy\bin\Debug\log4net.xml
