@@ -177,6 +177,102 @@ namespace Proxy
             }
         }
 
+        [OperationBehavior]
+        public List<double?> GetAzuriraneVrednostiUredjaja()
+        {
+            var timestampForDevices = ServerService.GetTimestampPerDevice();
+
+            List<double?> values = new List<double?>();
+
+            foreach (var kv in timestampForDevices)
+            {
+                ProxyMerenje lastValueForDevice = null;
+                lock (LocalStorage)
+                {
+                    if (LocalStorage.Where(x => x.MerenjeInfo.IdDevice == kv.Key).Count() > 0)
+                    {
+                        lastValueForDevice = LocalStorage
+                            .Where(x => x.MerenjeInfo.IdDevice == kv.Key)
+                            .OrderByDescending(x => x.MerenjeInfo.Timestamp)
+                            .FirstOrDefault();
+                    }
+                }
+
+                if (lastValueForDevice == null)
+                {
+                    // new value from db
+                    // get whole value from db not just number
+
+                    ProxyLogger.log.Info($"Proxy's doesn't have local copy, retreivin new one from server.");
+                    var newValueForDevice = ServerService.GetLastForDeviceId((int)kv.Key);
+                    values.Add(newValueForDevice.Vrednost);
+                    UpdateLocalStorageWithNewMerenje(newValueForDevice);
+                }
+                else if (lastValueForDevice.MerenjeInfo.Timestamp < kv.Value)
+                {
+                    // new value from db
+                    ProxyLogger.log.Info($"Proxy's merenje:{lastValueForDevice} is NOT up to date, retreiving new one from server.");
+
+                    var newMerenje = ServerService.GetMerenjeByDbId(lastValueForDevice.MerenjeInfo.IdDb);
+                    UpdateLocalStorageWithNewMerenje(newMerenje);
+                    values.Add(newMerenje.Vrednost);
+                }
+                else
+                {
+                    // return current valueProxy
+                    ProxyLogger.log.Info($"Proxy's merenje:{lastValueForDevice} is up to date.");
+                    values.Add(lastValueForDevice.MerenjeInfo.Vrednost);
+                }
+            }
+
+            return values;
+        }
+
+        [OperationBehavior]
+        public List<Merenje> GetAnalogni()
+        {
+            List<Merenje> merenja = new List<Merenje>();
+
+            var tsForAnalog = ServerService.GetTimestampsAnalog();
+
+            foreach (var kv in tsForAnalog)
+            {
+                ProxyMerenje localCopy = null;
+                lock (LocalStorage)
+                {
+                    if (LocalStorage.Where(x => x.MerenjeInfo.IdDb == kv.Key).Count() > 0)
+                    {
+                        localCopy = LocalStorage.Where(x => x.MerenjeInfo.IdDb == kv.Key).FirstOrDefault();
+                    }
+                }
+
+                if (localCopy == null)
+                {
+
+                    ProxyLogger.log.Info($"Proxy's doesn't have local copy, retreivin new one from server.");
+                    var newMerenje = GetMerenjeByDbId((int)kv.Key);
+                    UpdateLocalStorageWithNewMerenje(newMerenje);
+                    merenja.Add(newMerenje);
+                }
+                else if (localCopy.MerenjeInfo.Timestamp < kv.Value)
+                {
+                    ProxyLogger.log.Info($"Proxy's merenje:{localCopy} is NOT up to date, retreiving new one from server.");
+
+                    var newMerenje = GetMerenjeByDbId((int)kv.Key);
+                    UpdateLocalStorageWithNewMerenje(newMerenje);
+                    merenja.Add(newMerenje);
+                }
+                else
+                {
+                    ProxyLogger.log.Info($"Proxy's merenje:{localCopy} is up to date.");
+
+                    merenja.Add(localCopy.MerenjeInfo);
+                }
+            }
+
+            return merenja;
+        }
+
     }
 }
         
