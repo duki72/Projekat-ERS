@@ -133,7 +133,6 @@ namespace UnitTestProject
             Assert.IsNull(serverService.GetAllTimestampsById(id));
         }
 
-
         [TestMethod]
         public void getTestLastTimestampById()
         {
